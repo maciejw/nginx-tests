@@ -1,18 +1,18 @@
 ﻿
+using CertTools.Commands;
+
 using System.CommandLine;
 using System.CommandLine.Builder;
 using System.CommandLine.Hosting;
 using System.CommandLine.Parsing;
 
-using CertTools.Commands;
-
 CommandLineBuilder commandLineBuilder = new(new RootCommand("Certificate management")
-        {
-            new NewRootCa(),
-            new NewIntermediateCa(),
-            new NewLeafCertificate(),
-            new Pkcs12ToPem(),
-        });
+{
+    new NewRootCa(),
+    new NewIntermediateCa(),
+    new NewLeafCertificate(),
+    new Pkcs12ToPem(),
+});
 
 commandLineBuilder.UseDefaults().UseHost(configureHost =>
 {

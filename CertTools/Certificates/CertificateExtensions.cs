@@ -46,7 +46,7 @@ public static class CertificateExtensions
         certificateCollection
             .Select(item => X509CertificateLoader.LoadCertificate(item.Export(X509ContentType.Cert)))
             .ToList().ForEach(item => newCollection.Add(item));
-        
+
         return newCollection;
     }
 

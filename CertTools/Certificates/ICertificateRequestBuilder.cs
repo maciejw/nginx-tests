@@ -15,7 +15,7 @@ public interface ICertificateRequestBuilder
     ICertificateRequestBuilder AddEnhancedKeyUsage(IEnumerable<Oid> oids, bool critical = false);
     ICertificateRequestBuilder AddSubjectAlternativeName(Action<SubjectAlternativeNameBuilder> action, bool critical = false);
     ICertificateRequestBuilder AddAuthorityKeyIdentifier(X509SubjectKeyIdentifierExtension subjectKeyIdentifier);
-    
+
     /// <summary>
     /// Sets the public key for the certificate request.
     /// </summary>

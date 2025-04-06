@@ -3,7 +3,6 @@ using CertTools.CommandBuilders;
 
 using System.CommandLine;
 using System.CommandLine.Invocation;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 namespace CertTools.Commands;

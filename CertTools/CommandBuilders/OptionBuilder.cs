@@ -1,5 +1,4 @@
 using System.CommandLine;
-using System.CommandLine.Invocation;
 using System.Linq.Expressions;
 
 namespace CertTools.CommandBuilders;
@@ -37,12 +36,6 @@ internal class OptionBuilder<TOptionHolder, TOption>(CommandBuilder<TOptionHolde
     internal OptionBuilder<TOptionHolder, TOption> Configure(Action<Option<TOption>> value)
     {
         value.Invoke(option);
-        return this;
-    }
-
-    internal OptionBuilder<TOptionHolder, TOption> Required()
-    {
-        option.IsRequired = true;
         return this;
     }
 }

@@ -1,12 +1,12 @@
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Server.Kestrel.Https;
 
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
+
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 var builder = WebApplication.CreateBuilder(args);
 
