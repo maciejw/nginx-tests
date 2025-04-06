@@ -1,0 +1,16 @@
+{
+  "rest-client.certificates": {
+    "localhost:1443": {
+      "cert": ".\\certs\\client.crt",
+      "key": ".\\certs\\client.key"
+    },
+    "localhost:2443": {
+      "cert": ".\\certs\\client.crt",
+      "key": ".\\certs\\client.key"
+    },
+    "localhost:3443": {
+      "cert": ".\\certs\\client.crt",
+      "key": ".\\certs\\client.key"
+    }
+  }
+}
