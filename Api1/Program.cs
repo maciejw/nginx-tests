@@ -65,8 +65,8 @@ static X509Certificate2 NginxHeaderConverter(string certificate)
 
 builder.Services.Configure<CertificateForwardingOptions>(o =>
 {
-    o.CertificateHeader = "X-SSL-Client-Cert";
-    o.HeaderConverter = NginxHeaderConverter;
+    o.CertificateHeader = "SSL_CLIENT_CERT";
+    // o.HeaderConverter = NginxHeaderConverter;
 });
 
 var app = builder.Build();

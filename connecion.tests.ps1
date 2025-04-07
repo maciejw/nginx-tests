@@ -29,16 +29,6 @@ Describe "mtls tests" {
             }
         }
 
-        Context "no proxy 2443" {
-
-            It "should connect using openssl" {
-                Write-Output QUIT | & 'C:\Program Files\Git\mingw64\bin\openssl.exe' s_client -connect localhost:2443 -servername localhost -CAfile .\certs\ca\root-ca.crt -verify_return_error | Out-Host
-            }
-
-            It "should connect using openssl with mtls" {
-                Write-Output QUIT | & 'C:\Program Files\Git\mingw64\bin\openssl.exe' s_client -connect localhost:2443 -servername localhost -cert .\certs\client.crt -key .\certs\client.key -CAfile .\certs\ca\root-ca.crt -verify_return_error  | Out-Host
-            }
-        }
         Context "no proxy 3443" {
 
             It "should connect using openssl" {
@@ -51,18 +41,11 @@ Describe "mtls tests" {
         }
     }
     Context "proxy" {
-
-        It "should connect to backend" {
-            Invoke-RestMethod https://localhost:1443/test/backend | Out-Host
-        }
         It "should connect to api1" {
             Invoke-RestMethod https://localhost:1443/test/api1 | Out-Host
         }
     }
     Context "no proxy" {
-        It "should connect to backend" {
-            Invoke-RestMethod https://localhost:2443/ | Out-Host
-        }
 
         It "should connect to api1" {
             Invoke-RestMethod https://localhost:3443/ | Out-Host
